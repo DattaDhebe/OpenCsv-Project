@@ -1,15 +1,13 @@
 package com.opencsv;
 
-import com.opencsv.CSVReader;
 import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
 
-import java.io.File;
-import java.util.*;
 import java.io.IOException;
 import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Iterator;
 
 public class OpenCSVReadAndParseToBean {
     private static final String SAMPLE_CSV_FILE_PATH = "/home/datta/Desktop/Intellige Projects/OpenCSV Dependency/src/main/resources/sample.csv";
@@ -24,14 +22,14 @@ public class OpenCSVReadAndParseToBean {
                     .build();
 
             Iterator<CSVUser> csvUserIterator = csvToBean.iterator();
-
+            // Read all CSV contents into memory ( Not suitable for large
             while (csvUserIterator.hasNext()) {
                 CSVUser csvUser = csvUserIterator.next();
                 System.out.println("Name : " +csvUser.getName());
                 System.out.println("Email : " +csvUser.getEmail());
                 System.out.println("Phone : " +csvUser.getPhoneNo());
                 System.out.println("Country : " +csvUser.getCountry());
-                System.out.println("============================");
+                System.out.println("=============================");
             }
         }
     }
