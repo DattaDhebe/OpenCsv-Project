@@ -4,16 +4,16 @@ import com.opencsv.bean.CsvBindByName;
 
 public class CSVUser {
     @CsvBindByName
-    private String name;
+    public  String name;
 
     @CsvBindByName(column = "email", required = true)
-    private  String email;
+    public   String email;
 
     @CsvBindByName(column = "phone")
-    private String phoneNo;
+    public  String phoneNo;
 
     @CsvBindByName
-    private String country;
+    public  String country;
 
     public CSVUser(String name, String email, String phoneNo, String country) {
         this.name = name;
@@ -22,6 +22,8 @@ public class CSVUser {
         this.country = country;
     }
 
+    public CSVUser() {
+    }
 
     @Override
     public  String toString() {
@@ -34,18 +36,22 @@ public class CSVUser {
     }
 
     public String getName() {
+
         return name;
     }
 
     public String getEmail() {
+
         return email;
     }
 
     public String getPhoneNo() {
+
         return phoneNo;
     }
 
     public String getCountry() {
+
         return country;
     }
 }

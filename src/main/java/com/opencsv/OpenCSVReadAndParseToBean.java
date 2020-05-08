@@ -10,7 +10,7 @@ import java.nio.file.Paths;
 import java.util.Iterator;
 
 public class OpenCSVReadAndParseToBean {
-    private static final String SAMPLE_CSV_FILE_PATH = "/home/datta/Desktop/Intellige Projects/OpenCSV Dependency/src/main/resources/sample.csv";
+    private static final String SAMPLE_CSV_FILE_PATH = "./src/main/resources/sample.csv";
 
     public static void main(String[] args) throws IOException {
         try (
@@ -22,7 +22,7 @@ public class OpenCSVReadAndParseToBean {
                     .build();
 
             Iterator<CSVUser> csvUserIterator = csvToBean.iterator();
-            // Read all CSV contents into memory ( Not suitable for large
+
             while (csvUserIterator.hasNext()) {
                 CSVUser csvUser = csvUserIterator.next();
                 System.out.println("Name : " +csvUser.getName());

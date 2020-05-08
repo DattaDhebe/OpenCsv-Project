@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class OpenCSVWriter {
-    private static final String OBJECT_LIST_SAMPLE = "/home/datta/Desktop/Intellige Projects/OpenCSV Dependency/src/main/resources/sampleWrite.csv";
+    private static final String OBJECT_LIST_SAMPLE = "./src/main/resources/sampleWrite.csv";
 
     public static void main(String[] args) throws IOException,
             CsvDataTypeMismatchException,
@@ -29,8 +29,13 @@ public class OpenCSVWriter {
             myUsers.add(new CSVUser("Sundar Picahi", "Sundar.pichai@gmail.com", "1-1111111111", "India"));
             myUsers.add(new CSVUser("Satya Nadella", "satya.nadella@outlook.com","91-39293932828", "England"));
             myUsers.add(new CSVUser("kumar jayesh", "kumar.nadella@outlook.com","91-39293932828", "Saddle"));
+            myUsers.add(new CSVUser("Mayesh jayesh", "kumar.nadella@outlook.com","91-39293932828", "Saddle"));
+            myUsers.add(new CSVUser("ga jayesh", "kumar.nadella@outlook.com","91-39293932828", "Saddle"));
+            myUsers.add(new CSVUser("Uday Nadella", "satya.nadella@outlook.com","91-61493642686", "japan"));
+
 
             beanToCsv.write(myUsers);
+            writer.append((CharSequence) myUsers);
         }
     }
 }
